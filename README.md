@@ -1,6 +1,7 @@
 # **async-straight**
 
-[![NPM](https://nodei.co/npm/logger-one.png)](https://nodei.co/npm/async-straight/)
+[![NPM](https://nodei.co/npm/async-straight.png?downloadRank=true&stars=true)](https://nodei.co/npm/async-straight/)
+
 
 #### **A light weight module to run asynchronous tasks in series, inspired from [async.series](https://github.com/caolan/async/blob/v1.5.2/README.md#seriestasks-callback)**
 
