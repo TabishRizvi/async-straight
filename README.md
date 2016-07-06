@@ -36,23 +36,19 @@ __Example__
 
 ```js
 straight([
-            function(cb){
-                setTimeout(function(){
-                    cb(null,"hello");
-                },1000);
-            },
-            function(cb){
-                setTimeout(function(){
-                    cb(null,"world");
-                },1000);
-            }
-        ],function(err,result){
-            expect(err).to.eql(null);
-            expect(result).to.eql(["hello","world"]);
-            expect(callOrder).to.eql([1,2]);
-            done();
-        });
-
+   function(cb) {
+      setTimeout(function() {
+         cb(null, "hello");
+      }, 1000);
+   },
+   function(cb) {
+      setTimeout(function() {
+         cb(null, "world");
+      }, 2000);
+   }
+], function(err, result) {
+   // result is equal to ["hello","world"]
+});
 
 // an example using an object instead of an array
 straight({
