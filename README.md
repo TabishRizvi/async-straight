@@ -68,10 +68,13 @@ function(err, results) {
     // results is now equal to: {one: 1, two: 2}
 });
 ```
+## Tests
 
+```js
+npm run test
 ## AUTHOR
 
-** Tabish Rizvi (<a href="mailto:sayyidtabish@gmail.com">sayyidtabish@gmail.com</a>)**
+**Tabish Rizvi (<a href="mailto:sayyidtabish@gmail.com">sayyidtabish@gmail.com</a>)**
 
 ## LICENSE
 
