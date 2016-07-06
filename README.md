@@ -72,6 +72,8 @@ function(err, results) {
 
 ```js
 npm run test
+```
+
 ## AUTHOR
 
 **Tabish Rizvi (<a href="mailto:sayyidtabish@gmail.com">sayyidtabish@gmail.com</a>)**
