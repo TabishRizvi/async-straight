@@ -54,17 +54,17 @@ straight([
 straight({
     one: function(cb){
         setTimeout(function(){
-            cb(null, 1);
+            cb(null, "ping");
         }, 200);
     },
     two: function(callback){
         setTimeout(function(){
-            cb(null, 2);
+            cb(null, "pong");
         }, 100);
     }
 },
 function(err, results) {
-    // results is now equal to: {one: 1, two: 2}
+    // results is now equal to: {one: "ping", two: "pong"}
 });
 ```
 ## Tests
