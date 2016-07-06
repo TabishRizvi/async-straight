@@ -1,0 +1,25 @@
+{
+  "name": "async-straight",
+  "version": "1.0.0",
+  "description": "A light weight module to run asynchronous tasks in series, inspired from async.series",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "async",
+    "series",
+    "straight"
+  ],
+  "author": "Tabish Rizvi <sayyidtabish@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0"
+  }
+}
