@@ -9,10 +9,19 @@ var _ = require("underscore"),
 function straight(tasks,final){
 
     var tasksListType,keys;
-    if(typeof tasks !== "object"){
+    if(!_.isObject(tasks)){
         throw createCustomError("TASKS_NOT_ARRAY_OBJECT");
     }
-    else if(Array.isArray(tasks)){
+
+    if(!_.isUndefined(final) && !_.isFunction(final)){
+        throw createCustomError("FINAL_NOT_FUNCTION");
+    }
+
+    if(!_.every(tasks,_.isFunction)){
+        throw createCustomError("TASKS_NOT_FUNCTIONS");
+    }
+
+    if(_.isArray(tasks)){
         tasksListType = "ARRAY";
     }
     else {
@@ -21,13 +30,7 @@ function straight(tasks,final){
         tasks = _.values(tasks);
     }
 
-    var areAllFunctions = _.every(tasks,function(element){
-        return typeof element === "function";
-    });
-
-    if(!areAllFunctions){
-        throw createCustomError("TASKS_NOT_FUNCTIONS");
-    }
+    final = _.isUndefined(final) ? function(){} :  final;
 
     if(tasks.length===0){
         callSafely(final,this,[null,[]]);
@@ -79,7 +82,7 @@ function straightUtil(tasks,counter,resultArray,cb){
     }]);
 }
 
-function callSafely (fn,thisArg,args){
+function callSafely(fn,thisArg,args){
     process.nextTick(function(){
         fn.apply(thisArg,args);
     });

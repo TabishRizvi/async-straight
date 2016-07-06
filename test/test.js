@@ -114,6 +114,11 @@ describe('Straight', function() {
         })).to.throw(Error,/Tasks must be an array or object./);
     });
 
+    it('tasks is null', function() {
+        expect(straight.bind(straight,null,function(err,result){
+        })).to.throw(Error,/Tasks must be an array or object./);
+    });
+
     it('tasks not all elements as functions', function() {
         expect(straight.bind(straight,[
             function(cb){
@@ -124,6 +129,21 @@ describe('Straight', function() {
             "this is not a function"
         ],function(err,result){
         })).to.throw(Error,/Tasks must be an array of functions or object with values as functions./);
+    });
+
+    it('final callback is not function', function() {
+        expect(straight.bind(straight,[
+            function(cb){
+                setTimeout(function(){
+                    cb(null,"hello");
+                },1000);
+            },
+            function(cb){
+                setTimeout(function(){
+                    cb(null,"world");
+                },2000);
+            }
+        ],"this is not a function")).to.throw(Error,/Final callback, if supplied, must be a function./);
     });
 
 });

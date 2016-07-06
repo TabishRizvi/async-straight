@@ -15,7 +15,7 @@
     "straight"
   ],
   "author": "Tabish Rizvi <sayyidtabish@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "underscore": "^1.8.3"
   },
