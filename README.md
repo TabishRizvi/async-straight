@@ -36,19 +36,22 @@ __Example__
 
 ```js
 straight([
-    function(cb){
-        // do some stuff ...
-        cb(null, 'one');
-    },
-    function(cb){
-        // do some more stuff ...
-        cb(null, 'two');
-    }
-],
-// optional callback
-function(err, results){
-    // results is now equal to ['one', 'two']
-});
+            function(cb){
+                setTimeout(function(){
+                    cb(null,"hello");
+                },1000);
+            },
+            function(cb){
+                setTimeout(function(){
+                    cb(null,"world");
+                },1000);
+            }
+        ],function(err,result){
+            expect(err).to.eql(null);
+            expect(result).to.eql(["hello","world"]);
+            expect(callOrder).to.eql([1,2]);
+            done();
+        });
 
 
 // an example using an object instead of an array
@@ -74,10 +77,10 @@ function(err, results) {
 npm run test
 ```
 
-## AUTHOR
+## Author
 
 **Tabish Rizvi (<a href="mailto:sayyidtabish@gmail.com">sayyidtabish@gmail.com</a>)**
 
-## LICENSE
+## License
 
 **MIT**
