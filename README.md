@@ -1,9 +1,13 @@
-# **async-straight**
+![Righty Logo](https://s18.postimg.org/3xvt5z02h/be2f4412_c088_4595_8fea_d2f26d2ddd5d.png)](http://expressjs.com/)
 
-[![NPM](https://nodei.co/npm/async-straight.png?downloadRank=true&stars=true)](https://nodei.co/npm/async-straight/)
+The *RIGHT* way to configure routes in [express.js](https://github.com/expressjs/express)
+
+# **`righty`**
+
+![NPM](https://nodei.co/npm/righty.png?downloadRank=true&stars=true)](https://nodei.co/npm/righty/)
 
 
-#### **A light weight module to run asynchronous tasks in series, inspired from [async.series](https://github.com/caolan/async/blob/v1.5.2/README.md#seriestasks-callback)**
+## The *RIGHT* way to configure routes in [express.js](https://github.com/expressjs/express)
 
 
 ## Installation
